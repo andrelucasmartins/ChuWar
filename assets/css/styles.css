@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Joti+One&subset=latin-ext&effect=3d');
+
+body{
+    background: goldenrod /* url(../img/war-capa.jpg) no-repeat */;
+    background-size: cover;
+}
+
+.war{
+    font-family: 'Joti One', cursive;
+    font-size: 5rem;
+}
+
+.bg-white{
+    background: rgba(225, 255, 255, .5)
+}
