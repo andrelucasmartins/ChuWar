@@ -1,5 +1,5 @@
 <?php
- //se o jogo não foi iniciado ainda, inicia a contagem de tentativas e sorteia o número
+/*  //se o jogo não foi iniciado ainda, inicia a contagem de tentativas e sorteia o número
  if (!isset($_SESSION['tentativa'])) { 
   $_SESSION['tentativa'] = 1; 
   $_SESSION['numero'] = rand(1,100); 
@@ -25,11 +25,12 @@ if (isset($_POST['entrada']) && $_POST['entrada'] != "s") {
   } 
 
   //incrementa a tentativa 
+
  echo $_SESSION['tentativa']++; 
 //se o usuário digitou a letra s para começar de novo, destroi a variável de sessão com o número sorteado 
 } elseif (isset($_POST['entrada']) && $_POST['entrada'] == "s") { 
   unset($_SESSION['numero']); session_destroy(); 
-} 
+}  */
  
   $_SESSION['rodada'] = 0;
   if($_POST){
@@ -105,9 +106,9 @@ if (isset($_POST['entrada']) && $_POST['entrada'] != "s") {
             <span class="custom-control-description">Or toggle this other custom radio</span>
         </label>
         </div>
-        <input type='text' name='entrada'>
-        <input type='submit' class="btn btn-primary" value='Tentar'>
-        <!-- <button type="submit" class="btn btn-primary">Jogar</button> -->
+        <!-- <input type='text' name='entrada'>
+        <input type='submit' class="btn btn-primary" value='Tentar'> -->
+        <button type="submit" class="btn btn-primary">Jogar</button>
       </div>
     </div>
     </form>

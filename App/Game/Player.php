@@ -101,10 +101,10 @@ class Player{
     public function partida() {
         if(Player::autenticar()){
             if($this->partida > 0){
-                echo " mesma";
+               /*  echo " mesma"; */
                 return $this->partida = $this->partidaExistente;
             }else{
-                echo "nova partida";
+                /* echo "nova partida"; */
 
                 return $this->partida = 1;
             }
@@ -119,7 +119,7 @@ class Player{
                 /* echo "test 1"; */
                 return true;
             }else{
-                header("Location: \\");exit;
+                  header("Location: \\");exit;
             }
         }
         
@@ -167,22 +167,29 @@ class Player{
         } */
         
         $pais = Player::maps();
-        $paises = array_keys($pais, 2);
-
-        for($i = 0; $i < count($pais); $i++){
-            if(!empty($paises)){
-                $countryPlayer = $pais[$paises[0]];
-                if(!empty($countPlayer)){
-                    $countryMachime = $pais[$paises[1]];
-                }
-            }
+       
+        foreach ($pais as $paisP => $psP) {
+                        
+                      if(($psP["id"]%2) == 0){
+                            echo "Paises do Jogador - ".$psP["pais"]."<br><br>";
+                            $this->countryPlayer[] = $psP["pais"];
+                        }else{
+                            echo "Paises do Maquina - ".$psP["pais"]."<br><br>";
+                            $this->countryMachime[] = $psP["pais"];
+                        }                        
+                        
         }
 
-        /* echo "Array dos paises do jogador. <pre>";
-        print_r($pais[$paises[0]]);
+        
+       
 
-        echo "Array dos paises da maquina. <pre>";
-        print_r($countryMachime);  */
+        
+
+        echo "Array dos paises do jogador. <br>";
+        print_r($this->countryPlayer);
+
+        echo "<br>Array dos paises da maquina. <br>";
+        print_r($this->countryMachime); 
     }
  
     function search(){
